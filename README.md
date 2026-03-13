@@ -24,28 +24,33 @@ TYPO3 extension to add footnotes to TYPO3's integrated RTE CKEditor
 
 #### Add TypoScript configuration
 
-As include in your main template (setup, constants) 
+As include in your main template (setup, constants)
 
 Contants
 ```
 # include t3footnotes base contants
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:t3footnotes/Configuration/TypoScript/constants.ts">
+@import 'EXT:t3footnotes/Configuration/TypoScript/constants.typoscript'
 ```
 Setup
 ```
 # include original t3t3footnotes base typoscript
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:t3footnotes/Configuration/TypoScript/setup.ts">
+@import 'EXT:t3footnotes/Configuration/TypoScript/setup.typoscript'
 ```
 
 or over Include Static Templates in DB-Typoscript-Template
 
-
-#### Add JS-Plugin Configuration to your RTE Configuration
+#### Add JS-Plugin Configuration and button to your RTE Configuration
 
 ```
 imports:
   # Import Footnotes RTE Plugin Configuration
   - { resource: "EXT:t3footnotes/Configuration/RTE/Plugin.yaml"}
+
+editor:
+  config:
+    toolbar:
+      items:
+        - T3Footnotes
 ```
 
 
@@ -54,7 +59,4 @@ imports:
 Use in Templates to create a container for printing out of footnotes
 
 ```<f:cObject typoscriptObjectPath="lib.t3footnotes" />```
-
-
-enjoy
 

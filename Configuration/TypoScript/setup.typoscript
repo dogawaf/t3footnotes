@@ -1,0 +1,16 @@
+plugin.tx_t3footnotes {
+    view {
+        templateRootPaths.0 = EXT:t3footnotes/Resources/Private/Templates/
+        templateRootPaths.1 = {$plugin.tx_t3footnotes.view.templateRootPath}
+        partialRootPaths.0 = EXT:t3footnotes/Resources/Private/Partials/
+        partialRootPaths.1 = {$plugin.tx_t3footnotes.view.partialRootPath}
+        layoutRootPaths.0 = EXT:t3footnotes/Resources/Private/Layouts/
+        layoutRootPaths.1 = {$plugin.tx_t3footnotes.view.layoutRootPath}
+    }
+}
+
+# copy plugin config to lib-object
+lib.t3footnotes = COA
+lib.t3footnotes {
+  10 =< tt_content.t3footnotes_list.20
+}

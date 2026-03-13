@@ -1,17 +1,14 @@
 {
   "name": "cag/t3footnotes",
   "type": "typo3-cms-extension",
-  "description": "TYPO3 extension to add footnotes to TYPO3's integrated RTE CKEditor",
+  "description": "TYPO3 extension to add footnotes to TYPO3's integrated RTE CKEditor 5",
   "homepage": "https://github.com/connecta-ag/t3footnotes",
   "license": "GPL-2.0+",
   "keywords": [
     "TYPO3 CMS",
-    "gallery",
-    "image",
-    "slider",
-    "lightbox",
-    "extbase",
-    "fluid"
+    "footnotes",
+    "ckeditor",
+    "rte"
   ],
   "authors": [
     {
@@ -24,9 +21,9 @@
       "extension-key": "t3footnotes"
     }
   },
-  "require": {
-    "php": ">=7.0,<7.5",
-    "typo3/cms-core": ">=8.7.0,<=10.4.99"
+    "require": {
+    "php": ">=8.2",
+    "typo3/cms-core": "^13.4"
   },
   "autoload": {
     "psr-4": {
