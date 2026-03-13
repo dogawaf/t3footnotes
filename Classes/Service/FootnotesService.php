@@ -54,7 +54,7 @@ class FootnotesService
 
         // if found footnotes anchors process build footnotes
         if ($footnoteAnchors === []) {
-            return $content;
+            return $this->replaceFootnotesContainer($content, '');
         }
 
         // replace all anchors by temp marker
@@ -99,7 +99,11 @@ class FootnotesService
 
         $containerFootnotes = $this->buildFootnotesContainer($footnotes, $content, $request);
 
-        // add a footnotes container with generated footnotes to page content
+        return $this->replaceFootnotesContainer($content, $containerFootnotes);
+    }
+
+    private function replaceFootnotesContainer(string $content, string $containerFootnotes): string
+    {
         $patternReplaceContainer = '/' . self::MARKER_FOOTNOTES_START . '[\w\W]*(?=' . self::MARKER_FOOTNOTES_END . ')' . self::MARKER_FOOTNOTES_END . '/';
 
         return preg_replace($patternReplaceContainer, $containerFootnotes, $content);
